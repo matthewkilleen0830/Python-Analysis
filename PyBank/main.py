@@ -22,7 +22,7 @@ with open(budget_csv, newline='', encoding='utf-8') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
 
     # Bypass the header row
-    next(csvreader)
+    next(csvreader, None)
 
     # Loop through each each row of data after the header and add values to corresponding lists
     for budget_row in csvreader:
