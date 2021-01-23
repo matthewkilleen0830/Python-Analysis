@@ -1,50 +1,56 @@
+# Python Challenge:  PyBank
+
 # Import required modules
 import os
 import csv
+
+# Import optional and helpful module
 import statistics as avg
 
 # Set path to retrieve CSV file
 budget_csv = os.path.join('Resources', 'budget_data.csv')
 
-# Create and name empty lists to store data from CSV
+# Declare empty lists to store data from CSV
 month = []
 profit_or_loss = []
 revenue_change = []
 
-# Create function to find average of revenue_change list
+# Create function to find average of "revenue_change" list
 def Average(myList):
     return(avg.mean(myList))
 
-# Read CSV file using encoding for Windows and declare variable
+# Read CSV file using encoding for Windows and declare temporary variable to store contents
 with open(budget_csv, newline='', encoding='utf-8') as csvfile:
 
-    # CSV reader specifies delimiter and creates new variable that holds contents
+    # Declare new variable specifying delimiter to separate values and store contents
     csvreader = csv.reader(csvfile, delimiter=",")
 
     # Bypass the header row
     next(csvreader, None)
 
-    # Loop through each each row of data after the header and add values to corresponding lists
+    # Loop through each each row of data after the header in "csvreader" and add values to "month" list and to "profit_or_loss" list respectively
     for budget_row in csvreader:
 
-        # Add month from each row to list
+        # Add month from each row to "month" list
         month.append(budget_row[0])
 
-        # Cast profit or loss to number using 'int' and add to list
-        profit_or_loss.append(int(budget_row[1]))
+        # Cast profit or loss to number using 'float' and add to "profit_or_loss" list
+        profit_or_loss.append(float(budget_row[1]))
     
-# Loop through values in profit_or_loss list to calculate total net profit
+# Declare variable, set initial value, and loop through values in "profit_or_loss" list to calculate total net profit or loss
 net_profit = 0
 for x in profit_or_loss:
+
+    # Add next row's value to current row's value
     net_profit = x + net_profit
 
-# Calculate difference in values between rows of profits and add to list
+# Calculate difference in values between rows in "profit_or_loss" list and populate "revenue_change" list with month-to-month changes
 revenue_change = [profit_or_loss[x + 1] - profit_or_loss[x] for x in range(0,len(profit_or_loss) - 1)]
 
 # Declare variable, count total number of months, and store value
 total_months = (len(month))
 
-# Declare variable, recall function to calculate average, and store value
+# Declare variable, recall previously defined function to calculate average of values in "revenue_change" list, and store value
 average_change = Average(revenue_change)
 
 # Declare variables, locate the greatest increase in profits (date and amount), and store values
@@ -57,7 +63,7 @@ least_profit = min(revenue_change)
 list_min_profit = revenue_change.index(least_profit)
 least_month = month[list_min_profit + 1]
 
-# Declare variable to store analysis summary and print to terminal
+# Declare variable, format numbered variables within f strings, store analysis summary, and print to terminal
 analysis_summary =   (f'Financial Analysis\n'
                       f'---------------------------------------------------\n'
                       f'Total Months:  {total_months}\n'
