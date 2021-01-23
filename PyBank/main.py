@@ -25,8 +25,8 @@ with open(budget_csv, newline='', encoding='utf-8') as csvfile:
     # Declare new variable specifying delimiter to separate values and store contents
     csvreader = csv.reader(csvfile, delimiter=",")
 
-    # Bypass the header row
-    next(csvreader, None)
+    # Store and bypass the header row
+    column_labels = next(csvreader)
 
     # Loop through each each row of data after the header in "csvreader" and add values to "month" list and to "profit_or_loss" list respectively
     for budget_row in csvreader:
