@@ -29,11 +29,11 @@ Both of these challenges encompass a real-world situation where Python scripting
   ```text
   Financial Analysis
   ----------------------------
-  Total Months: &nbsp;86
-  Total: &nbsp;$38382578
-  Average Change: &nbsp;$-2315.12
-  Greatest Increase in Profits: &nbsp;Feb-2012 ($1926159)
-  Greatest Decrease in Profits: &nbsp;Sep-2013 ($-2196167)
+  Total Months: 86
+  Total: $38382578
+  Average Change: $-2315.12
+  Greatest Increase in Profits: Feb-2012 ($1926159)
+  Greatest Decrease in Profits: Sep-2013 ($-2196167)
   ```
 
 * In addition, the final script should both print the analysis to the terminal and export a text file with the results.
@@ -61,14 +61,14 @@ Both of these challenges encompass a real-world situation where Python scripting
   ```text
   Election Results
   -------------------------
-  Total Votes: &nbsp;3521001
+  Total Votes: 3521001
   -------------------------
-  Khan: &nbsp;63.000% (2218231)
-  Correy: &nbsp;20.000% (704200)
-  Li: &nbsp;14.000% (492940)
-  O'Tooley: &nbsp;3.000% (105630)
+  Khan: 63.000% (2218231)
+  Correy: 20.000% (704200)
+  Li: 14.000% (492940)
+  O'Tooley: 3.000% (105630)
   -------------------------
-  Winner: &nbsp;Khan
+  Winner: Khan
   -------------------------
   ```
 
